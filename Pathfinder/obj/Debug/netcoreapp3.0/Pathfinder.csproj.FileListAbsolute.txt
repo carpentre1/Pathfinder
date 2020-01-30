@@ -1,0 +1,11 @@
+C:\Users\slowpoke\Pathfinder\Pathfinder\bin\Debug\netcoreapp3.0\Pathfinder.exe
+C:\Users\slowpoke\Pathfinder\Pathfinder\bin\Debug\netcoreapp3.0\Pathfinder.deps.json
+C:\Users\slowpoke\Pathfinder\Pathfinder\bin\Debug\netcoreapp3.0\Pathfinder.runtimeconfig.json
+C:\Users\slowpoke\Pathfinder\Pathfinder\bin\Debug\netcoreapp3.0\Pathfinder.runtimeconfig.dev.json
+C:\Users\slowpoke\Pathfinder\Pathfinder\bin\Debug\netcoreapp3.0\Pathfinder.dll
+C:\Users\slowpoke\Pathfinder\Pathfinder\bin\Debug\netcoreapp3.0\Pathfinder.pdb
+C:\Users\slowpoke\Pathfinder\Pathfinder\obj\Debug\netcoreapp3.0\Pathfinder.csprojAssemblyReference.cache
+C:\Users\slowpoke\Pathfinder\Pathfinder\obj\Debug\netcoreapp3.0\Pathfinder.AssemblyInfoInputs.cache
+C:\Users\slowpoke\Pathfinder\Pathfinder\obj\Debug\netcoreapp3.0\Pathfinder.AssemblyInfo.cs
+C:\Users\slowpoke\Pathfinder\Pathfinder\obj\Debug\netcoreapp3.0\Pathfinder.dll
+C:\Users\slowpoke\Pathfinder\Pathfinder\obj\Debug\netcoreapp3.0\Pathfinder.pdb
