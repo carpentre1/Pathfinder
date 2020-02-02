@@ -19,18 +19,38 @@ namespace Pathfinder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Agent myAgent = new Agent(0, 0, 6, 6);
-            myAgent.SolvePath();
+            Agent myAgent = new Agent(0, 0, 5, 5);
+            //myAgent.SolvePath();
+
+            Pathfinder pathfinder = new Pathfinder();
+
+            int[,] area = myAgent.CreateArea();
+
+            pathfinder.Pathfind(myAgent, area);
+
+            Print2dArray(area);
+        }
+
+        private static void Print2dArray(int[,] board)
+        {
+            for (int x = 0; x < board.GetLength(0); x++)
+            {
+                for (int y = 0; y < board.GetLength(1); y++)
+                {
+                    Console.Write("|");
+                    Console.Write(board[x, y]);
+                }
+                Console.WriteLine("|");
+            }
         }
     }
 
     class Agent
     {
-        int startingX;
-        int startingY;
-        int endingX;
-        int endingY;
+        public int startingX;
+        public int startingY;
+        public int endingX;
+        public int endingY;
 
         public Agent(int startX, int startY, int endX, int endY)
         {
@@ -46,15 +66,15 @@ namespace Pathfinder
         /// The benefit of manually laying it out like this is we can easily test it since we can clearly see and modify the value of each index.
         /// </summary>
         /// <returns></returns>
-        int[,] CreateArea()
+        public int[,] CreateArea()
         {
             int[,] positions = new int[6, 6]
             {
                 {0, 0, 0, 0, 0, 0} ,
-                {0, 0, 0, 0, 0, 0} ,
-                {0, 0, 0, 0, 0, 0} ,
-                {0, 0, 0, 0, 0, 0} ,
-                {0, 0, 0, 0, 0, 0} ,
+                {1, 1, 1, 0, 0, 0} ,
+                {0, 0, 0, 1, 1, 1} ,
+                {0, 1, 0, 0, 1, 1} ,
+                {0, 0, 1, 1, 1, 1} ,
                 {0, 0, 0, 0, 0, 0}
             };
             Console.WriteLine("The starting position is [" + startingX + "," + startingY + "] which has a value of " + positions[startingX,startingY]);
