@@ -20,7 +20,6 @@ namespace Pathfinder
         static void Main(string[] args)
         {
             Agent myAgent = new Agent(0, 0, 5, 5);
-            //myAgent.SolvePath();
 
             Pathfinder pathfinder = new Pathfinder();
 
@@ -43,6 +42,8 @@ namespace Pathfinder
                 Console.WriteLine("|");
             }
         }
+
+
     }
 
     class Agent
@@ -71,20 +72,14 @@ namespace Pathfinder
             int[,] positions = new int[6, 6]
             {
                 {0, 0, 0, 0, 0, 0} ,
-                {1, 1, 1, 0, 0, 0} ,
-                {0, 0, 0, 1, 1, 1} ,
-                {0, 1, 0, 0, 1, 1} ,
+                {1, 1, 1, 1, 1, 0} ,
+                {0, 0, 0, 0, 0, 0} ,
+                {1, 1, 1, 1, 1, 1} ,
                 {0, 0, 1, 1, 1, 1} ,
                 {0, 0, 0, 0, 0, 0}
             };
             Console.WriteLine("The starting position is [" + startingX + "," + startingY + "] which has a value of " + positions[startingX,startingY]);
             return positions;
-        }
-
-        public void SolvePath()
-        {
-            int[,] positions = CreateArea();
-
         }
     }
 }

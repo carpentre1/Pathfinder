@@ -6,6 +6,8 @@ namespace Pathfinder
 {
     class Pathfinder
     {
+        int movesTaken = 0;
+        bool mazeIsPossible = true;
         public void Pathfind(Agent a, int[,] board)
         {
             Tuple<int, int> playerPosition = new Tuple<int, int>(a.startingX, a.startingY);
@@ -14,7 +16,7 @@ namespace Pathfinder
             int[,] pathfinderBoard = board;
 
             Console.WriteLine(playerPosition);
-            while (!(playerPosition.Item1 == endingPosition.Item1 && playerPosition.Item2 == endingPosition.Item2))
+            while (!(playerPosition.Item1 == endingPosition.Item1 && playerPosition.Item2 == endingPosition.Item2) && mazeIsPossible)
             {
                 pathfinderBoard[playerPosition.Item1, playerPosition.Item2] = 2;
 
@@ -23,7 +25,17 @@ namespace Pathfinder
                 Console.WriteLine(playerPosition);
             }
 
-            pathfinderBoard[playerPosition.Item1, playerPosition.Item2] = 2;
+            if(!mazeIsPossible)
+            {
+                Console.WriteLine("Maze is impossible!");
+            }
+
+            else
+            {
+                pathfinderBoard[playerPosition.Item1, playerPosition.Item2] = 2;
+                Console.WriteLine("Moves taken to reach the end: " + movesTaken);
+            }
+
         }
 
         private Tuple<int, int> NextPosition(int[,] board, Tuple<int, int> playerPosition, Tuple<int, int> endingPosition)
@@ -40,6 +52,8 @@ namespace Pathfinder
                     }
                 }
             }
+
+            movesTaken++;
 
             int horiz;
             int vert;
@@ -132,9 +146,9 @@ namespace Pathfinder
                 if (ValidPosition(validPositions, playerPosition.Item1 - horiz, playerPosition.Item2 - vert))
                         return new Tuple<int, int>(playerPosition.Item1 - horiz, playerPosition.Item2 - vert);
             }
-
+            mazeIsPossible = false;
             Console.WriteLine(board[board.GetLength(0) - 1, board.GetLength(1) - 1]);
-            return null;
+            return playerPosition;
         }
 
 
